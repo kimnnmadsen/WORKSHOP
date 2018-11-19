@@ -28,11 +28,17 @@ class Building {
         actuators = new ArrayList();
     }
 
-    public void addSensor(Sensor sensor) throws UUIDMismatch {
-        if (sensor.getUUID() != uuid){
+    private boolean checkDeviceUUID(Device d) throws UUIDMismatch {
+        if (d.getUUID() != uuid) {
             throw new UUIDMismatch();
         }
-        sensors.add(sensor);
+        return true;
+    }
+
+    public void addSensor(Sensor sensor) throws UUIDMismatch {
+        if (checkDeviceUUID(sensor)) {
+            sensors.add(sensor);
+        }
     }
 
     public void addActuator(Actuator actuator) {
@@ -87,7 +93,7 @@ class Building {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("UUID: ").append(uuid).append("\tName: ").append(name).append("\tAddress: ").append(address)
-        .append("\nSensors:\n");
+                .append("\nSensors:\n");
         for (Sensor s : sensors) {
             sb.append(s.toString());
         }

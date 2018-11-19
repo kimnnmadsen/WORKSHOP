@@ -14,11 +14,11 @@ import java.util.UUID;
 class Actuator extends Device{
 
     public Actuator(UUID buildingUUID) {
-        super(buildingUUID, "Actuator");
+        super(buildingUUID);
     }
     
     public Actuator(UUID buildingUUID, double value) {
-        super(buildingUUID, "Actuator", value);
+        super(buildingUUID, value);
     }
     
     

@@ -18,15 +18,13 @@ public abstract class Device {
     private double value;
     private String type;
 
-    public Device(UUID buildingUUID, String type) {
+    public Device(UUID buildingUUID) {
         this.buildingUUID = buildingUUID;
-        this.type = type;
         value = Math.random();
     }
 
-    public Device(UUID buildingUUID, String type, double value) {
+    public Device(UUID buildingUUID, double value) {
         this.buildingUUID = buildingUUID;
-        this.type = type;
         this.value = value;
     }
 
@@ -54,7 +52,6 @@ public abstract class Device {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("UUID: ").append(getUUID())
-                .append("\tType: ").append(getType())
                 .append("\tValue: ").append(getValue())
                 .append("\n");
         return sb.toString();
