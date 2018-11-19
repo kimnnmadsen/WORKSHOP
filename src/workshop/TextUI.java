@@ -37,6 +37,7 @@ public class TextUI {
         for (Building b : SDU.getBuildings()){
             System.out.println(b);
         }
+        System.out.println(sen1.getValue());
                 
         //System.out.println("Price: God Pris");
         // TODO code application logic here

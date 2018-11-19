@@ -16,7 +16,6 @@ public abstract class ADevice {
     private UUID uuid;
     private UUID buildingUUID;
     double value;
-    private String type;
 
     public ADevice(UUID buildingUUID) {
         uuid = UUID.randomUUID();
@@ -44,10 +43,6 @@ public abstract class ADevice {
 
     public void setBuildingUUID(UUID buildingUUID) {
         this.buildingUUID = buildingUUID;
-    }
-
-    public String getType() {
-        return type;
     }
 
     @Override
