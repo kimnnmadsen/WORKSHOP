@@ -18,6 +18,7 @@ public abstract class Device {
 
     public Device(UUID buildingUUID) {
         this.buildingUUID = buildingUUID;
+        value = Math.random();
     }
 
     public Device(UUID buildingUUID, double value) {
