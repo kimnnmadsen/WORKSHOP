@@ -11,7 +11,7 @@ import java.util.UUID;
  *
  * @author Kim Madsen <kmads18@student.sdu.dk>
  */
-public class Device {
+public abstract class Device {
     private UUID uuid;
     private UUID buildingUUID;
     private int value;
