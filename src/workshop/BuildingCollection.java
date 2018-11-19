@@ -16,10 +16,28 @@ public class BuildingCollection {
     private ArrayList<Building> buildings;
 
     public BuildingCollection() {
-    this.buildings = new ArrayList();
+        this.buildings = new ArrayList();
     }
-    
-    public ArrayList<Building> getBuildings(){
+
+    public void addBuilding(String name, String address) {
+        buildings.add(new Building(name, address));
+    }
+
+    public ArrayList<Building> getBuildings() {
         return buildings;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("Bygninger:\n");
+        for (Building b : buildings) {
+            sb.append("Name: ").append(b.getName())
+                    .append("\tAddress: ").append(b.getAddress())
+                    .append("\tUUID: ").append(b.getUUID())
+                    .append("\n");
+
+        }
+        return sb.toString();
     }
 }
