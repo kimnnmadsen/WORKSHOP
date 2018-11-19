@@ -5,20 +5,10 @@
  */
 package workshop;
 
-import java.util.UUID;
-
 /**
  *
  * @author Kim Madsen <kmads18@student.sdu.dk>
  */
-class Sensor extends ADevice{
-    
-    public Sensor(UUID buildingUUID) {
-        super(buildingUUID);
-    }
-
-    public Sensor(UUID buildingUUID, double value) {
-        super(buildingUUID, value);
-    }
-
+interface IWriteable {
+public void setValue(double value);
 }

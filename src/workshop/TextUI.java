@@ -5,6 +5,9 @@
  */
 package workshop;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author Kim Madsen <kmads18@student.sdu.dk>
@@ -22,6 +25,13 @@ public class TextUI {
         SDU.addBuilding(bygg44);
         System.out.println(SDU);
         Actuator act1 = new Actuator(tek.getUUID());
+        Sensor sen1 = new Sensor(tek.getUUID());
+        try {
+            tek.addActuator(act1);
+            tek.addSensor(sen1);
+        } catch (UUIDMismatch ex) {
+            Logger.getLogger(TextUI.class.getName()).log(Level.SEVERE, null, ex);
+        }
         //tek.addActuator();
         //SDU.getBuilding(1).addActuator(new Actuator());
         for (Building b : SDU.getBuildings()){

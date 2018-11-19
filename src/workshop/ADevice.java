@@ -11,19 +11,21 @@ import java.util.UUID;
  *
  * @author Kim Madsen <kmads18@student.sdu.dk>
  */
-public abstract class Device {
+public abstract class ADevice {
 
     private UUID uuid;
     private UUID buildingUUID;
-    private double value;
+    double value;
     private String type;
 
-    public Device(UUID buildingUUID) {
+    public ADevice(UUID buildingUUID) {
+        uuid = UUID.randomUUID();
         this.buildingUUID = buildingUUID;
+        
         value = Math.random();
     }
 
-    public Device(UUID buildingUUID, double value) {
+    public ADevice(UUID buildingUUID, double value) {
         this.buildingUUID = buildingUUID;
         this.value = value;
     }
@@ -55,10 +57,6 @@ public abstract class Device {
                 .append("\tValue: ").append(getValue())
                 .append("\n");
         return sb.toString();
-    }
-
-    public void setValue(int value) {
-        this.value = value;
     }
 
 }

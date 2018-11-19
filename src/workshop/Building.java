@@ -28,8 +28,8 @@ class Building {
         actuators = new ArrayList();
     }
 
-    private boolean checkDeviceUUID(Device d) throws UUIDMismatch {
-        if (d.getUUID() != uuid) {
+    private boolean checkDeviceUUID(ADevice d) throws UUIDMismatch {
+        if (d.getBuildingUUID() != uuid) {
             throw new UUIDMismatch();
         }
         return true;
@@ -41,8 +41,10 @@ class Building {
         }
     }
 
-    public void addActuator(Actuator actuator) {
-        actuators.add(actuator);
+    public void addActuator(Actuator actuator) throws UUIDMismatch {
+        if (checkDeviceUUID(actuator)) {
+            actuators.add(actuator);
+        }
     }
 
     public void removeSensor(UUID uuid) {
