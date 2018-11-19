@@ -14,13 +14,13 @@ import java.util.UUID;
 public abstract class Device {
     private UUID uuid;
     private UUID buildingUUID;
-    private int value;
+    private double value;
 
     public Device(UUID buildingUUID) {
         this.buildingUUID = buildingUUID;
     }
 
-    public Device(UUID buildingUUID, int value) {
+    public Device(UUID buildingUUID, double value) {
         this.buildingUUID = buildingUUID;
         this.value = value;
     }
@@ -33,7 +33,7 @@ public abstract class Device {
         return buildingUUID;
     }
 
-    public int getValue() {
+    public double getValue() {
         return value;
     }
 
