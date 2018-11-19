@@ -6,7 +6,6 @@
 package workshop;
 
 import java.util.ArrayList;
-import java.util.UUID;
 
 /**
  *
@@ -14,21 +13,13 @@ import java.util.UUID;
  */
 public class BuildingCollection {
 
-    ArrayList<Building> buildings;
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
-
-    }
+    private ArrayList<Building> buildings;
 
     public BuildingCollection() {
+    this.buildings = new ArrayList();
     }
-
-    public static void printBuildings() {
-        // her skriver vi noget kode
+    
+    public ArrayList<Building> getBuildings(){
+        return buildings;
     }
-
 }
