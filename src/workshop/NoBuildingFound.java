@@ -5,20 +5,13 @@
  */
 package workshop;
 
-import java.util.UUID;
-
 /**
  *
  * @author Kim Madsen <kmads18@student.sdu.dk>
  */
-class Sensor extends Device{
+class NoBuildingFound extends Exception {
+   public NoBuildingFound(){
+       super("No building found");
+   }
     
-    public Sensor(UUID buildingUUID) {
-        super(buildingUUID, "Sensor");
-    }
-
-    public Sensor(UUID buildingUUID, double value) {
-        super(buildingUUID, "Sensor", value);
-    }
-
 }

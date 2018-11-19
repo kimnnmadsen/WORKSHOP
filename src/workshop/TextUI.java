@@ -16,10 +16,19 @@ public class TextUI {
      */
     public static void main(String[] args) {
         BuildingCollection SDU = new BuildingCollection();
-        SDU.addBuilding("TEK", "Campusvej 10");
-        SDU.addBuilding("Byg 44", "Campusvej 4");
+        Building tek = new Building("TEK", "Campusvej 10");
+        Building bygg44 = new Building("Byg 44","Campusvej 4");
+        SDU.addBuilding(tek);
+        SDU.addBuilding(bygg44);
         System.out.println(SDU);
-        System.out.println("Price: God Pris");
+        Actuator act1 = new Actuator(tek.getUUID());
+        //tek.addActuator();
+        //SDU.getBuilding(1).addActuator(new Actuator());
+        for (Building b : SDU.getBuildings()){
+            System.out.println(b);
+        }
+                
+        //System.out.println("Price: God Pris");
         // TODO code application logic here
     }
     

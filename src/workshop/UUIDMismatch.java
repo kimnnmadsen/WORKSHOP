@@ -5,20 +5,14 @@
  */
 package workshop;
 
-import java.util.UUID;
-
 /**
  *
  * @author Kim Madsen <kmads18@student.sdu.dk>
  */
-class Sensor extends Device{
-    
-    public Sensor(UUID buildingUUID) {
-        super(buildingUUID, "Sensor");
-    }
+class UUIDMismatch extends Exception {
 
-    public Sensor(UUID buildingUUID, double value) {
-        super(buildingUUID, "Sensor", value);
+    public UUIDMismatch() {
+        super("UUID mismatch between assigned Building UUID and actual Building UUID");
     }
 
 }

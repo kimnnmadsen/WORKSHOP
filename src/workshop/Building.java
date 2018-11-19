@@ -24,9 +24,14 @@ class Building {
         this.name = name;
         this.address = address;
         this.uuid = UUID.randomUUID();
+        sensors = new ArrayList();
+        actuators = new ArrayList();
     }
 
-    public void addSensor(Sensor sensor) {
+    public void addSensor(Sensor sensor) throws UUIDMismatch {
+        if (sensor.getUUID() != uuid){
+            throw new UUIDMismatch();
+        }
         sensors.add(sensor);
     }
 
@@ -49,6 +54,7 @@ class Building {
             }
         }
     }
+
     public ArrayList<Sensor> getSensors() {
         return sensors;
     }
@@ -75,6 +81,22 @@ class Building {
 
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("UUID: ").append(uuid).append("\tName: ").append(name).append("\tAddress: ").append(address)
+        .append("\nSensors:\n");
+        for (Sensor s : sensors) {
+            sb.append(s.toString());
+        }
+        sb.append("Actuators:\n");
+        for (Actuator a : actuators) {
+            sb.append(a.toString());
+        }
+        return sb.toString();
+
     }
 
 }

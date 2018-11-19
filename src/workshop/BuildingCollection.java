@@ -6,12 +6,13 @@
 package workshop;
 
 import java.util.ArrayList;
+import java.util.UUID;
 
 /**
  *
  * @author Kim Madsen <kmads18@student.sdu.dk>
  */
-public class BuildingCollection {
+public class BuildingCollection{
 
     private ArrayList<Building> buildings;
 
@@ -19,12 +20,24 @@ public class BuildingCollection {
         this.buildings = new ArrayList();
     }
 
-    public void addBuilding(String name, String address) {
-        buildings.add(new Building(name, address));
+    public void addBuilding(Building b) {
+        buildings.add(b);
     }
 
     public ArrayList<Building> getBuildings() {
         return buildings;
+    }
+    
+    public Building getBuilding(UUID uuid) throws NoBuildingFound{
+        for (Building b : buildings){
+            if (b.getUUID() == uuid){
+                return b; 
+            }
+        }
+        throw new NoBuildingFound();
+    }
+    public Building getBuilding(int index) throws NoBuildingFound{
+        return buildings.get(index);
     }
 
     @Override
@@ -32,11 +45,10 @@ public class BuildingCollection {
         StringBuilder sb = new StringBuilder();
         sb.append("Bygninger:\n");
         for (Building b : buildings) {
-            sb.append("Name: ").append(b.getName())
+            sb.append("UUID: ").append(b.getUUID())
+                    .append("\tName: ").append(b.getName())
                     .append("\tAddress: ").append(b.getAddress())
-                    .append("\tUUID: ").append(b.getUUID())
                     .append("\n");
-
         }
         return sb.toString();
     }
