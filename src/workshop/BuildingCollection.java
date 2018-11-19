@@ -12,7 +12,7 @@ import java.util.UUID;
  *
  * @author Kim Madsen <kmads18@student.sdu.dk>
  */
-public class Workshop {
+public class BuildingCollection {
 
     ArrayList<Building> buildings;
 
@@ -24,7 +24,7 @@ public class Workshop {
 
     }
 
-    public Workshop() {
+    public BuildingCollection() {
     }
 
     public static void printBuildings() {
