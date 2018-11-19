@@ -34,20 +34,27 @@ class Building {
         actuators.add(actuator);
     }
 
+    public void removeSensor(UUID uuid) {
+        for (Sensor s : sensors) {
+            if (s.getUUID().equals(uuid)) {
+                sensors.remove(s);
+            }
+        }
+    }
+
+    public void removeActuator(UUID uuid) {
+        for (Actuator a : actuators) {
+            if (a.getUUID().equals(uuid)) {
+                actuators.remove(a);
+            }
+        }
+    }
     public ArrayList<Sensor> getSensors() {
         return sensors;
     }
 
     public ArrayList<Actuator> getActuactors() {
         return actuators;
-    }
-
-    public void printSensors() {
-
-    }
-
-    public void printActuators() {
-
     }
 
     public String getName() {
@@ -58,7 +65,7 @@ class Building {
         return address;
     }
 
-    public UUID getUuid() {
+    public UUID getUUID() {
         return uuid;
     }
 

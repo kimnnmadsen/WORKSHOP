@@ -25,7 +25,7 @@ public abstract class Device {
         this.value = value;
     }
 
-    public UUID getUuid() {
+    public UUID getUUID() {
         return uuid;
     }
 
