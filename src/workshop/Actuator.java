@@ -11,7 +11,7 @@ import java.util.UUID;
  *
  * @author Kim Madsen <kmads18@student.sdu.dk>
  */
-class Actuator extends ADevice implements IWriteable{
+class Actuator extends ADevice{
 
     public Actuator(UUID buildingUUID) {
         super(buildingUUID);
@@ -21,7 +21,6 @@ class Actuator extends ADevice implements IWriteable{
         super(buildingUUID, value);
     }
     
-    @Override
     public void setValue(double value){
         this.value = value;
     }
