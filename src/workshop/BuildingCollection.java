@@ -49,10 +49,6 @@ public class BuildingCollection {
         throw new NoBuildingFound();
     }
 
-    public Building getBuilding(int index) throws NoBuildingFound {
-        return buildings.get(index);
-    }
-
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

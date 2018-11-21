@@ -20,7 +20,6 @@ public abstract class ADevice {
     public ADevice(UUID buildingUUID) {
         uuid = UUID.randomUUID();
         this.buildingUUID = buildingUUID;
-        
         value = Math.random();
     }
 

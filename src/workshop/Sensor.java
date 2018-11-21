@@ -14,7 +14,7 @@ import java.util.UUID;
 class Sensor extends ADevice{
     
     public Sensor(UUID buildingUUID) {
-        super(buildingUUID);
+        super(buildingUUID);   
     }
 
     public Sensor(UUID buildingUUID, double value) {

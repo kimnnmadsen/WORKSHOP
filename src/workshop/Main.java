@@ -20,24 +20,18 @@ public class Main {
     public static void main(String[] args) {
         BuildingCollection SDU = new BuildingCollection();
         Building tek = new Building("TEK", "Campusvej 10");
-        Building bygg44 = new Building("Byg 44","Campusvej 4");
+        Building bygg44 = new Building("Byg 44", "Campusvej 4");
         SDU.addBuilding(tek);
         SDU.addBuilding(bygg44);
-        System.out.println(SDU);
-        //Actuator act1 = new Actuator(tek.getUUID());
-        //Sensor sen1 = new Sensor(tek.getUUID());
-        //Actuator act2 = new Actuator(tek.getUUID());
-        //Sensor sen2 = new Sensor(tek.getUUID());
-        //Actuator act3 = new Actuator(bygg44.getUUID());
-        //Sensor sen3 = new Sensor(bygg44.getUUID());
-              
         
-            tek.addActuator();
-            tek.addSensor();
-        
-        TextUI.getBuildings(SDU);
+
+        tek.addActuator();
+        tek.addSensor();
         
         
+        TextUI.printBuildings(SDU);
+        TextUI.printAll(SDU);
+
     }
-    
+
 }

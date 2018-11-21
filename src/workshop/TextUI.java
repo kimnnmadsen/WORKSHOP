@@ -13,7 +13,10 @@ import java.util.logging.Logger;
  * @author Kim Madsen <kmads18@student.sdu.dk>
  */
 public class TextUI {
-    public static void getBuildings(BuildingCollection bc) {
+    public static void printBuildings(BuildingCollection bc){
+        System.out.println(bc);
+    }
+    public static void printAll(BuildingCollection bc) {
         for (Building b : bc.getBuildings()) {
             System.out.println(b);
         }
