@@ -28,20 +28,11 @@ class Building {
         actuators = new ArrayList();
     }
 
-    private boolean checkDeviceUUID(ADevice d) throws UUIDMismatch {
-        if (d.getBuildingUUID() != uuid) {
-            throw new UUIDMismatch();
-        }
-        return true;
-    }
-
-    public void addSensor() {
-        Sensor s = new Sensor(uuid);
+    public void addSensor(Sensor s) {
         sensors.add(s);
     }
 
-    public void addActuator(){
-        Actuator a = new Actuator(uuid);
+    public void addActuator(Actuator a){
         actuators.add(a);
     }
 
@@ -62,11 +53,11 @@ class Building {
     }
 
     public ArrayList<Sensor> getSensors() {
-        return sensors;
+        return new ArrayList<>(sensors);
     }
 
     public ArrayList<Actuator> getActuactors() {
-        return actuators;
+        return new ArrayList<>(actuators);
     }
 
     public String getName() {

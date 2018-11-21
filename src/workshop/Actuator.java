@@ -11,18 +11,32 @@ import java.util.UUID;
  *
  * @author Kim Madsen <kmads18@student.sdu.dk>
  */
-class Actuator extends ADevice{
+abstract class Actuator extends ADevice {
 
-    public Actuator(UUID buildingUUID) {
-        super(buildingUUID);
+    int value;
+
+    public Actuator(String name) {
+        super(name);
     }
-    
-    public Actuator(UUID buildingUUID, double value) {
-        super(buildingUUID, value);
+
+    public Actuator(UUID uuid, String name) {
+        super(uuid, name);
     }
-    
-    public void setValue(double value){
+
+    public Actuator() {
+        super();
+    }
+
+    public Actuator(UUID uuid) {
+        super(uuid);
+    }
+
+    public void setValue(int value) {
         this.value = value;
     }
-    
+
+    public int getValue() {
+        return value;
+    }
+
 }

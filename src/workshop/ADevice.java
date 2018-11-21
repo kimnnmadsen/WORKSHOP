@@ -11,44 +11,44 @@ import java.util.UUID;
  *
  * @author Kim Madsen <kmads18@student.sdu.dk>
  */
-public abstract class ADevice {
+abstract class ADevice {
 
     private UUID uuid;
-    private UUID buildingUUID;
-    double value;
+    private String name;
 
-    public ADevice(UUID buildingUUID) {
-        uuid = UUID.randomUUID();
-        this.buildingUUID = buildingUUID;
-        value = Math.random();
+    public String getName() {
+        return name;
     }
 
-    public ADevice(UUID buildingUUID, double value) {
-        this.buildingUUID = buildingUUID;
-        this.value = value;
+    public ADevice(String name) {
+        uuid = UUID.randomUUID();
+        this.name = name;
+    }
+
+    public ADevice(UUID uuid, String name) {
+        this.uuid = uuid;
+        this.name = name;
+    }
+
+    public ADevice() {
+        uuid = UUID.randomUUID();
+    }
+
+    public ADevice(UUID uuid) {
+        this.uuid = uuid;
     }
 
     public UUID getUUID() {
         return uuid;
     }
 
-    public UUID getBuildingUUID() {
-        return buildingUUID;
-    }
-
-    public double getValue() {
-        return value;
-    }
-
-    public void setBuildingUUID(UUID buildingUUID) {
-        this.buildingUUID = buildingUUID;
-    }
+    public abstract int getValue();
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("UUID: ").append(getUUID())
-                .append("\tValue: ").append(getValue())
+                .append(" Value: ").append(getValue())
                 .append("\n");
         return sb.toString();
     }

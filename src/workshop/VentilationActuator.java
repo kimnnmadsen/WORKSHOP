@@ -11,24 +11,27 @@ import java.util.UUID;
  *
  * @author Kim Madsen <kmads18@student.sdu.dk>
  */
-abstract class Sensor extends ADevice{
+public class VentilationActuator extends Actuator {
 
-    public Sensor(String name) {
+    public VentilationActuator(String name) {
         super(name);
     }
 
-    public Sensor(UUID uuid, String name) {
+    public VentilationActuator(UUID uuid, String name) {
         super(uuid, name);
     }
-   
-    public Sensor() {
+
+    public VentilationActuator() {
     }
 
-    public Sensor(UUID uuid) {
+    public VentilationActuator(UUID uuid) {
         super(uuid);
     }
-    
-    public abstract int getValue();
-    
-    
+
+    @Override
+    public void setValue(int value) {
+        if (value >= 0 && value <= 100) {
+            super.setValue(value);
+        }
+    }
 }

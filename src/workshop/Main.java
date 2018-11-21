@@ -5,8 +5,11 @@
  */
 package workshop;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
+import java.util.UUID;
+//import static workshop.TextUI.bmsPrint;
 
 /**
  *
@@ -23,15 +26,17 @@ public class Main {
         Building bygg44 = new Building("Byg 44", "Campusvej 4");
         SDU.addBuilding(tek);
         SDU.addBuilding(bygg44);
-        
 
-        tek.addActuator();
-        tek.addSensor();
-        
-        
+        //Actuator act1 = new VentilationActuator("Ventilatoren");
+        //Sensor sen1 = new TemperatureSensor("Vejr Stationen");
+        //Sensor sen2 = new Co2Sensor("VW TestCenter");
+        //act1.setValue(35);
+        //tek.addActuator(act1);
+        //tek.addSensor(sen1);
+        //tek.addSensor(sen2);
         TextUI.printBuildings(SDU);
         TextUI.printAll(SDU);
+        TextUI.main(SDU, tek);
 
     }
-
 }

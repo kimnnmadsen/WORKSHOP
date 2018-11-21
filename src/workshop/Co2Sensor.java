@@ -11,24 +11,26 @@ import java.util.UUID;
  *
  * @author Kim Madsen <kmads18@student.sdu.dk>
  */
-abstract class Sensor extends ADevice{
+public class Co2Sensor extends Sensor {
 
-    public Sensor(String name) {
+    public Co2Sensor(String name) {
         super(name);
     }
 
-    public Sensor(UUID uuid, String name) {
+    public Co2Sensor(UUID uuid, String name) {
         super(uuid, name);
     }
-   
-    public Sensor() {
+
+    public Co2Sensor() {
+        super();
     }
 
-    public Sensor(UUID uuid) {
+    public Co2Sensor(UUID uuid){
         super(uuid);
     }
     
-    public abstract int getValue();
-    
-    
+    @Override
+    public int getValue() {
+        return (int)(Math.random() * 100.0);
+    }
 }
