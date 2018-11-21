@@ -35,16 +35,14 @@ class Building {
         return true;
     }
 
-    public void addSensor(Sensor sensor) throws UUIDMismatch {
-        if (checkDeviceUUID(sensor)) {
-            sensors.add(sensor);
-        }
+    public void addSensor() {
+        Sensor s = new Sensor(uuid);
+        sensors.add(s);
     }
 
-    public void addActuator(Actuator actuator) throws UUIDMismatch {
-        if (checkDeviceUUID(actuator)) {
-            actuators.add(actuator);
-        }
+    public void addActuator(){
+        Actuator a = new Actuator(uuid);
+        actuators.add(a);
     }
 
     public void removeSensor(UUID uuid) {
